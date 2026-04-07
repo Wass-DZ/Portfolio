@@ -63,7 +63,7 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="bg-primary-text text-white rounded-2xl shadow-soft p-6 flex flex-col justify-between transform transition-transform hover:-translate-y-1">
+            <div className="bg-primary-text dark:bg-slate-800 text-white rounded-2xl shadow-soft p-6 flex flex-col justify-between transform transition-transform hover:-translate-y-1">
               <div className="bg-white/10 w-fit p-2 rounded-lg mb-4">
                 <Code2 className="w-6 h-6 text-white" />
               </div>
