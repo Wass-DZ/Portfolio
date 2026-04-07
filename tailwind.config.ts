@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: 'class',
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,16 +10,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#F8FAFC", // slate-50
-        "cards-surface": "#FFFFFF",
-        "primary-text": "#0F172A", // slate-900
-        "secondary-text": "#475569", // slate-600
-        "primary-accent": "#1D4ED8", // blue-700
-        "primary-accent-hover": "#1E40AF", // blue-800
-        "secondary-accent": "#CBD5E1", // slate-300
-        "soft-accent-bg": "#EFF6FF", // blue-50
-        border: "#E2E8F0", // slate-200
-        "muted-section-bg": "#F1F5F9", // slate-100
+        background: "var(--background)",
+        "cards-surface": "var(--cards-surface)",
+        "primary-text": "var(--primary-text)",
+        "secondary-text": "var(--secondary-text)",
+        "primary-accent": "var(--primary-accent)",
+        "primary-accent-hover": "var(--primary-accent-hover)",
+        "secondary-accent": "var(--secondary-accent)",
+        "soft-accent-bg": "var(--soft-accent-bg)",
+        border: "var(--border)",
+        "muted-section-bg": "var(--muted-section-bg)",
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],

@@ -3,7 +3,35 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: #F8FAFC;
+    --cards-surface: #FFFFFF;
+    --primary-text: #0F172A;
+    --secondary-text: #475569;
+    --primary-accent: #1D4ED8;
+    --primary-accent-hover: #1E40AF;
+    --secondary-accent: #CBD5E1;
+    --soft-accent-bg: #EFF6FF;
+    --border: #E2E8F0;
+    --muted-section-bg: #F1F5F9;
+  }
+
+  .dark {
+    --background: #0B1220;
+    --cards-surface: #111827;
+    --primary-text: #E5E7EB;
+    --secondary-text: #94A3B8;
+    --primary-accent: #1D4ED8;
+    --primary-accent-hover: #3B82F6;
+    --secondary-accent: #475569;
+    --soft-accent-bg: #1e3a8a30;
+    --border: #1F2937;
+    --muted-section-bg: #0F172A;
+  }
+}
+
+@layer base {
   body {
-    @apply bg-background text-primary-text antialiased;
+    @apply bg-background text-primary-text antialiased transition-colors duration-200;
   }
 }

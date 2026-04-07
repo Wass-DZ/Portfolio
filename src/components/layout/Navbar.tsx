@@ -7,6 +7,7 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import PrimaryButton from "../shared/PrimaryButton";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -49,13 +50,17 @@ export default function Navbar() {
                 );
               })}
             </div>
-            <PrimaryButton as="a" href={siteData.cvPath} download>
-              Download CV
-            </PrimaryButton>
+            <div className="flex items-center space-x-4 ml-4 border-l border-border pl-4">
+              <ThemeToggle />
+              <PrimaryButton as="a" href={siteData.cvPath} download>
+                Download CV
+              </PrimaryButton>
+            </div>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile menu and toggle */}
+          <div className="md:hidden flex items-center space-x-2">
+            <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-secondary-text hover:text-primary-text p-2"
