@@ -8,8 +8,8 @@ export const fr = {
     downloadCV: "Télécharger le CV",
   },
   footer: {
-    tagline: "Building logic, data, and experiences.", // Non traduit dans l'original mais on peut le traduire : "Logique, data et expériences."
-    linksTitle: "Connect",
+    tagline: "Logique, data et expériences.",
+    linksTitle: "Réseaux",
     builtWith: "Développé avec Next.js et Tailwind CSS",
     rights: "Tous droits réservés.",
   },
@@ -123,7 +123,7 @@ export const fr = {
         {
           title: "Focus Actuel",
           paragraphs: [
-            "Je me concentre aujourd'hui sur le renforcement de mes capacités en IA, Data, Software et technologies Cloud. Je suis particulièrement intéressé par les opportunités me permettant d'appliquer ces connaissances à des problèmes concrets pour approfondir mes acquis.",
+            "Je me concentre aujourd'hui sur le renforcement de mes capacités en IA, Data, développement logiciel et technologies Cloud. Je suis particulièrement intéressé par les opportunités me permettant d'appliquer ces connaissances à des problèmes concrets pour approfondir mes acquis.",
             "L'analyse des performances et la prise de décision orientée donnée me tiennent également beaucoup à cœur, un domaine que j'ai développé via mon expérience en marketing et e-commerce."
           ]
         },
@@ -131,7 +131,7 @@ export const fr = {
           title: "Ce Qui Rend Mon Profil Unique",
           paragraphs: [
             "Ce qui rend mon profil différent, c'est la combinaison d'une solide formation technique et d'une expérience concrète orientée stratégie et business.",
-            "En parallèle de mes études en informatique, j'ai travaillé dans le monde de l'e-commerce et géré des campagnes Meta Ads. Ce travail incluait de la recherche de marché, l'optimisation de conversions (landing pages) et l'analyse de métriques clés de performance. J'ai ainsi appris à réfléchir en termes de metrics, d'itérations et d'impact final mesurable.",
+            "En parallèle de mes études en informatique, j'ai travaillé dans le monde de l'e-commerce et géré des campagnes Meta Ads. Ce travail incluait de la recherche de marché, l'optimisation de conversions (landing pages) et l'analyse d'indicateurs clés de performance. J'ai ainsi appris à réfléchir en termes de métriques, d'itérations et d'impact final mesurable.",
             "Ainsi, je n'aime pas uniquement concevoir des solutions technologiques logiques et fonctionnelles — j'apporte un profond intérêt à la manière dont elles créent de la valeur ajoutée et dont elles performent."
           ]
         }
