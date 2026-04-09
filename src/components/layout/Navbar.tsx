@@ -8,24 +8,26 @@ import { useState } from "react";
 import PrimaryButton from "../shared/PrimaryButton";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageToggle } from "./LanguageToggle";
+import { Locale, Dictionary } from "@/dictionaries";
 
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Experience", href: "/experience" },
-  { name: "Contact", href: "/contact" },
-];
-
-export default function Navbar() {
+export default function Navbar({ locale, dict }: { locale: Locale, dict: Dictionary['nav'] }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = [
+    { name: dict.home, href: `/${locale}` },
+    { name: dict.about, href: `/${locale}/about` },
+    { name: dict.projects, href: `/${locale}/projects` },
+    { name: dict.experience, href: `/${locale}/experience` },
+    { name: dict.contact, href: `/${locale}/contact` },
+  ];
 
   return (
     <nav className="sticky top-0 z-50 w-full bg-cards-surface/90 backdrop-blur-md border-b border-border">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <Link href="/" className="text-xl font-bold text-primary-text tracking-tight">
+          <Link href={`/${locale}`} className="text-xl font-bold text-primary-text tracking-tight">
             {siteData.name}
           </Link>
 
@@ -33,7 +35,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center space-x-8">
             <div className="flex space-x-6">
               {navLinks.map((link) => {
-                const isActive = pathname === link.href;
+                const isActive = link.href === `/${locale}` ? pathname === link.href : pathname.startsWith(link.href);
                 return (
                   <Link
                     key={link.name}
@@ -51,15 +53,17 @@ export default function Navbar() {
               })}
             </div>
             <div className="flex items-center space-x-4 ml-4 border-l border-border pl-4">
+              <LanguageToggle currentLocale={locale} />
               <ThemeToggle />
               <PrimaryButton as="a" href={siteData.cvPath} download>
-                Download CV
+                {dict.downloadCV}
               </PrimaryButton>
             </div>
           </div>
 
           {/* Mobile menu and toggle */}
           <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle currentLocale={locale} />
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -77,7 +81,7 @@ export default function Navbar() {
         <div className="md:hidden bg-cards-surface border-b border-border">
           <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const isActive = link.href === `/${locale}` ? pathname === link.href : pathname.startsWith(link.href);
               return (
                 <Link
                   key={link.name}
@@ -96,7 +100,7 @@ export default function Navbar() {
             })}
             <div className="px-3 pt-2">
               <PrimaryButton as="a" href={siteData.cvPath} className="w-full justify-center" download>
-                Download CV
+                {dict.downloadCV}
               </PrimaryButton>
             </div>
           </div>

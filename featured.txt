@@ -3,15 +3,38 @@ import Tag from "../shared/Tag";
 import SecondaryButton from "../shared/SecondaryButton";
 import Link from "next/link";
 import { Github } from "lucide-react";
-import { Dictionary, Locale } from "@/dictionaries";
 
-export default function FeaturedProjects({ dict, locale }: { dict: Dictionary['home']['featuredProjects'], locale: Locale }) {
+export default function FeaturedProjects() {
+  const projects = [
+    {
+      label: "Academic Project",
+      title: "Mini-Shell in C",
+      summary: "A Unix mini-shell built in C that supports process execution, redirections, pipes, background tasks, and signal handling.",
+      techStack: ["C", "Unix/Linux"],
+      githubUrl: "https://github.com/Wass-DZ/SHELL",
+    },
+    {
+      label: "Academic Project",
+      title: "Spam Classification",
+      summary: "A machine learning project for spam detection using text preprocessing, feature extraction, and supervised classification methods.",
+      techStack: ["Python", "Machine Learning"],
+      githubUrl: undefined, 
+    },
+    {
+      label: "Academic Project",
+      title: "Olympic Games Database Management",
+      summary: "A database management project built with Python and SQL to organize, query, and analyze data for an Olympic-style competition system.",
+      techStack: ["Python", "SQL"],
+      githubUrl: "https://github.com/Wass-DZ/CEBD_Project",
+    },
+  ];
+
   return (
     <section className="py-20 border-t border-border/50">
-      <SectionHeading title={dict.title} />
+      <SectionHeading title="Featured Projects" />
       
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-12 mb-10">
-        {dict.projects.map((project, index) => (
+        {projects.map((project, index) => (
           <div 
             key={index} 
             className="flex flex-col bg-cards-surface rounded-2xl border border-border shadow-soft p-8 transition-all hover:shadow-md hover:border-primary-accent/30"
@@ -44,7 +67,7 @@ export default function FeaturedProjects({ dict, locale }: { dict: Dictionary['h
                 rel="noopener noreferrer"
               >
                 <Github size={18} />
-                <span>{dict.sourceBtn}</span>
+                <span>View Source</span>
               </a>
             )}
           </div>
@@ -52,8 +75,8 @@ export default function FeaturedProjects({ dict, locale }: { dict: Dictionary['h
       </div>
 
       <div className="flex justify-center">
-        <SecondaryButton as={Link} href={`/${locale}/projects`}>
-          {dict.viewAll}
+        <SecondaryButton as={Link} href="/projects">
+          See All Projects
         </SecondaryButton>
       </div>
     </section>

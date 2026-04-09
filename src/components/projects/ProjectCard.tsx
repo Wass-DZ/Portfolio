@@ -7,6 +7,7 @@ export interface ProjectCardProps {
   summary: string;
   techStack: string[];
   githubUrl?: string;
+  sourceLabel?: string;
 }
 
 export default function ProjectCard({
@@ -15,6 +16,7 @@ export default function ProjectCard({
   summary,
   techStack,
   githubUrl,
+  sourceLabel = "View Source",
 }: ProjectCardProps) {
   return (
     <div className="flex flex-col bg-cards-surface rounded-2xl border border-border shadow-soft p-8 transition-all hover:shadow-md hover:border-primary-accent/30 h-full">
@@ -47,7 +49,7 @@ export default function ProjectCard({
           rel="noopener noreferrer"
         >
           <Github size={18} />
-          <span>View Source</span>
+          <span>{sourceLabel}</span>
         </a>
       )}
     </div>
